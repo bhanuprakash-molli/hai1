@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>**The Mystery Garden**</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `
+In the heart of a charming village, nestled between rolling hills and vibrant meadows, there was an enchanting garden known as "The Mystery Garden." Legend had it that this garden bloomed with surprises and wonders, but only those with open hearts could truly experience its magic.
+
+One sunny morning, a curious young girl named Ella discovered a weathered map tucked inside an old book at the village library. The map led to The Mystery Garden, promising hidden treasures and unexpected delights. Intrigued by the prospect of adventure, Ella decided to embark on a journey to uncover the secrets of the mystical garden.
+
+Following the map's twists and turns, Ella found herself standing at the entrance of The Mystery Garden. The air was filled with the sweet fragrance of flowers, and the sound of a babbling brook echoed in the background. As she wandered deeper into the garden, each step revealed a new surprise – colorful butterflies danced around her, and exotic birds chirped melodiously in the trees.
+
+As Ella reached the heart of the garden, she stumbled upon a clearing where a wise old gardener named Mr. Theodore was tending to the most extraordinary plants. He welcomed her with a warm smile and explained, "This is a garden of surprises, my dear. The more you give to it, the more it gives back."
+
+Mr. Theodore handed Ella a small seed and encouraged her to plant it with a wish in her heart. Ella carefully planted the seed and, to her amazement, watched as it sprouted into a radiant bloom of her favorite flowers.
+
+Over the following days, Ella explored The Mystery Garden, discovering hidden nooks filled with treasures – from sparkling crystals to delicate poems hanging from the branches. Each surprise seemed tailored to her likes and dreams.
+
+As time passed, Ella not only reveled in the enchantment of The Mystery Garden but also learned valuable lessons about kindness, gratitude, and the magic of giving. The once-curious girl had grown into a compassionate young woman, and the garden flourished with her positive energy.
+
+Eventually, Ella shared her experiences with the villagers, inspiring them to visit The Mystery Garden and unlock their own surprises. The garden, it seemed, had a way of revealing different wonders to each person based on their desires and intentions.
+
+And so, in the heart of the village, The Mystery Garden became a symbol of joy, wonder, and the extraordinary possibilities that unfold when one approaches life with an open heart and a spirit of adventure.`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
